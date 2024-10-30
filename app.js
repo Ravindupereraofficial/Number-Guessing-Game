@@ -1,28 +1,28 @@
-let randomnumber = Math.floor(Math.random() * 10) + 1;
-let chances = 3;
+let getrandomnumber = Math.floor(Math.random() * 10) + 1;
+let getchancesthree = 3;
 
 function Guess() {
-    let userinput = parseInt(document.getElementById("userinput").value);
-    let winorloss = document.getElementById("winorloss");
-    let lowhigher = document.getElementById("loworhigher");
-    let leftnumbers = document.getElementById("leftnumbers");
+    let getuserinput = parseInt(document.getElementById("userinput").value);
+    let getwinorloss = document.getElementById("winorloss");
+    let getlowhigher = document.getElementById("loworhigher");
+    let getleftnumbers = document.getElementById("leftnumbers");
 
-    if (chances > 0) {
-        if (randomnumber === userinput) {
-            winorloss.innerHTML = "YOU WIN THE GAME!";
-            lowhigher.innerHTML = "Guessing number is correct...!";
+    if (getchancesthree > 0) {
+        if (getrandomnumber === getuserinput) {
+            getwinorloss.innerHTML = "YOU WIN THE GAME!";
+            getlowhigher.innerHTML = "Guessing number is correct...!";
         } else {
-            chances--;
-            leftnumbers.innerHTML = "Chances left: " + chances;
-            if (randomnumber > userinput) {
-                lowhigher.innerHTML = "Your number is too low";
+            getchancesthree--;
+            getleftnumbers.innerHTML = "Chances left: " + getchancesthree;
+            if (getrandomnumber > getuserinput) {
+                getlowhigher.innerHTML = "Your number is too low";
             } else {
-                lowhigher.innerHTML = "Your number is too high";
+                getlowhigher.innerHTML = "Your number is too high";
             }
         }
         
-        if (chances === 0 && randomnumber !== userinput) {
-            winorloss.innerHTML = "GAME OVER! You've run out of chances.";
+        if (getchancesthree === 0 && getrandomnumber !== getuserinput) {
+            getwinorloss.innerHTML = "GAME OVER! You've run out of chances.";
             
         }
     }
