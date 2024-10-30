@@ -1,29 +1,29 @@
-let randomnumber= (Math.floor((Math.random()*10+1)));
-console.log(randomnumber)
+let randomnumber = Math.floor(Math.random() * 10) + 1;
+let chances = 3;
 
-function guess(){
+function Guess() {
+    let userinput = parseInt(document.getElementById("userinput").value);
+    let winorloss = document.getElementById("winorloss");
+    let lowhigher = document.getElementById("loworhigher");
+    let leftnumbers = document.getElementById("leftnumbers");
 
-  
-  let userinput=document.getElementById("catchnumber").value;
-  console.log(userinput)
-
-  if(randomnumber==userinput){
-    chancesleft.innerHTML = "You Won The Game";
-    attempt.innerHTML = "your Guessing Number Is Correct";
-  } else{
-
-    if(randomnumber>userinput){
-        coolorhot.innerHTML="your Number Is low"
-   
-    }else if (randomnumber>userinput){
-        coolorhot.innerHTML="your Number Is Higher"
-    }
-
+    if (chances > 0) {
+        if (randomnumber === userinput) {
+            winorloss.innerHTML = "YOU WIN THE GAME!";
+            lowhigher.innerHTML = "Guessing number is correct...!";
+        } else {
+            chances--;
+            leftnumbers.innerHTML = "Chances left: " + chances;
+            if (randomnumber > userinput) {
+                lowhigher.innerHTML = "Your number is too low";
+            } else {
+                lowhigher.innerHTML = "Your number is too high";
+            }
+        }
         
-
+        if (chances === 0 && randomnumber !== userinput) {
+            winorloss.innerHTML = "GAME OVER! You've run out of chances.";
+            
+        }
     }
-
-
-
-  }
-
+}

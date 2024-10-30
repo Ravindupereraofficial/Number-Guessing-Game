@@ -3,26 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Number Guessing</title>
 </head>
 <body>
-<div><center>
-    <h2>
-        Number Guessing!
-    </h2>
+    <div>
+    <h1>Number Guessing</h1>
+    <h3>Guess a number between 1 to 10:</h3>
+    <input type="text" id="userinput" placeholder="Enter here">
+    <input type="button" value="Guess" onclick="Guess()">
     
-    <h5>Gues a Number Betveen 1 to 10:</h5>
+    <h2 id="leftnumbers">Chances left: 3</h2>
+    <h2 id="winorloss"></h2>
+    <h2 id="loworhigher"></h2>
 
-    <input type="text" placeholder="Enter Your Guessing Number" id="catchnumber">
-    <input type="button" value="Gueess" onclick="guess()">
-
-    <h3 id="chancesleft"></h3>
-
-    <h3 id="attempt"></h3>
-    <h3 id="coolorhot"></h3>
-
-</center>
 </div>
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
